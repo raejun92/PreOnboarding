@@ -42,7 +42,7 @@
 ```
 {
 	token,
-	name
+	userid
 }
 ```
 
@@ -58,7 +58,7 @@
 ```
 {
 	token,
-	name
+	userid
 }
 ```
 
