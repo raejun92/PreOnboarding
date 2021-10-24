@@ -1,6 +1,7 @@
-import * as userRepository from '../data/auth.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import 'express-async-errors';
+import * as userRepository from '../data/auth.js';
 
 const bcryptSaltRounds = 10;
 const jwtSecretKey = "BCvWhjK*TX&5Z@ut4eIVy@M0pd5Do^OV";
