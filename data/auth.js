@@ -12,6 +12,10 @@ export async function findByUserid(userid) {
 	return users.find(user => user.userid === userid);
 }
 
+export async function findById(id) {
+	return users.find(user => user.id === id);
+}
+
 export async function createUser(user) {
 	const newbie = { id: String(users.length + 1), ...user };
 	users.push(newbie);
