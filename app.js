@@ -4,6 +4,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import 'express-async-errors';
 import authRouter from './router/auth.js';
+import postRouter from './router/posts.js';
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.use(helmet());
 app.use(morgan('tiny'));
 
 app.use('/auth', authRouter);
-// app.use('/posts', postRouter);
+app.use('/posts', postRouter);
 
 app.use((req, res, next) => {
 	res.sendStatus(404);
