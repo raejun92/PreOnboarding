@@ -32,9 +32,26 @@ export async function createPost(req, res) {
 }
 
 export async function updatePost(req, res) {
+	const id = req.params.id;
+	const text = req.body.text;
+	const post = postRepository.getById(id);
 
+	if (!post)
+		return res.sendStatus(404);
+	if (post.author !== req.userId)
+		return res.sendStatus(403);
+	const modify = await postRepository.update(id, text);
+	res.status(200).json(modify);
 }
 
 export async function deletePost(req, res) {
+	const id = req.params.id;
+	const post = postRepository.getById(id);
 
+	if (!post)
+		return res.status(404);
+	if (post.author !== req.userId)
+		return res.sendStatus(403);
+	await postRepository.remove(id);
+	res.sendStatus(204);
 }

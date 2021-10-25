@@ -13,8 +13,8 @@ function createJwtToken(user) {
 
 export async function signup(req, res) {
 	const { userid, password, name, email } = req.body;
-	const checkId = await userRepository.findByUserid(userid);
-	if (checkId)
+	const existId = await userRepository.findByUserid(userid);
+	if (existId)
 		return res.status(409).json({ message: `${userid} already exists`});
 	const hashed = await bcrypt.hash(password, bcryptSaltRounds);
 	const newbie = await userRepository.createUser({
