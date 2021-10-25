@@ -74,3 +74,14 @@ export async function getByLimitOffset(limit, offset) {
 		return getAll().then(data => data.slice(endPoint - limit, endPoint));
 	}
 }
+
+export async function create(text, userId) {
+	const post = {
+		id: String(posts.length + 1),
+		text,
+		author: userId,
+		createAt: new Date(),
+	};
+	posts = [post, ...posts];
+	return post;
+}

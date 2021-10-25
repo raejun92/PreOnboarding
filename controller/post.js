@@ -24,7 +24,11 @@ export async function getPosts(req, res) {
 }
 
 export async function createPost(req, res) {
+	const { text } = req.body;
+	const userId = req.userId;
+	const post = await postRepository.create(text, userId);
 
+	res.status(201).json({ data: post });
 }
 
 export async function updatePost(req, res) {
