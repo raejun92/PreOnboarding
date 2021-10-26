@@ -4,7 +4,14 @@ let users = [
 		userid: 'userid',
 		password: '$2b$10$Xk9YSlElEPkvdebEneZmheaOG5HeyqJXprjmwTZySPJTrOZfCcJj.',
 		name: 'minsu',
-		email: 'minsu@google.com',
+		email: 'minsu@naver.com',
+	},
+	{
+		id: '2',
+		userid: 'cuco123',
+		password: '$2b$10$0zLFv3Q7ki79fx4TTi8HR.0QkuJelF8zaUHYF7uoRix6fEOp5ES2i',
+		name: 'cuco',
+		email: 'cuco@gmail.com',
 	},
 ];
 

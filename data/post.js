@@ -1,61 +1,43 @@
 let posts = [
 	{
-		id: '10',
-		text: "hello world",
-		author: "1",
-		createdAt: new Date().toString(),
-	},
-	{
-		id: '9',
-		text: "hello world",
-		author: "1",
-		createdAt: new Date().toString(),
-	},
-	{
-		id: '8',
-		text: "hello world",
-		author: "1",
-		createdAt: new Date().toString(),
-	},
-	{
 		id: '7',
-		text: "hello world",
+		text: "Ok good! very cool",
 		author: "1",
 		createdAt: new Date().toString(),
 	},
 	{
 		id: '6',
-		text: "hello world",
-		author: "1",
+		text: "Please, subscribe my song",
+		author: "2",
 		createdAt: new Date().toString(),
 	},
 	{
 		id: '5',
-		text: "hello world",
+		text: "Oh really nice!",
 		author: "1",
 		createdAt: new Date().toString(),
 	},
 	{
 		id: '4',
-		text: "hello world",
-		author: "1",
+		text: "My song is very good",
+		author: "2",
 		createdAt: new Date().toString(),
 	},
 	{
 		id: '3',
-		text: "hello world",
-		author: "1",
+		text: "What is the pen?",
+		author: "2",
 		createdAt: new Date().toString(),
 	},
 	{
 		id: '2',
-		text: "hello world",
-		author: "1",
+		text: "hello I'm cuco.",
+		author: "2",
 		createdAt: new Date().toString(),
 	},
 	{
 		id: '1',
-		text: "hello world",
+		text: "hi I don't know who am i.",
 		author: "1",
 		createdAt: new Date().toString(),
 	},
@@ -78,6 +60,7 @@ export async function getByLimitOffset(limit, offset) {
 export async function getById(id) {
 	const exist = posts.find(post => post.id === id);
 
+	console.log(exist);
 	if (!exist)
 		return null;
 	return exist;

@@ -34,8 +34,7 @@ export async function createPost(req, res) {
 export async function updatePost(req, res) {
 	const id = req.params.id;
 	const text = req.body.text;
-	const post = postRepository.getById(id);
-
+	const post = await postRepository.getById(id);
 	if (!post)
 		return res.sendStatus(404);
 	if (post.author !== req.userId)
@@ -46,7 +45,7 @@ export async function updatePost(req, res) {
 
 export async function deletePost(req, res) {
 	const id = req.params.id;
-	const post = postRepository.getById(id);
+	const post = await postRepository.getById(id);
 
 	if (!post)
 		return res.status(404);
